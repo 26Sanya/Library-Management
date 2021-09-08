@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Api,com.librarymanagement.exceptions,ResourceNotFoundException,5,4,0,0,2,2,1,1,1,1
+Api,com.librarymanagement,RESTApplication,5,3,0,0,2,1,1,1,1,1
+Api,com.librarymanagement.service,BookServiceImplement,194,82,14,6,37,15,13,9,6,6
+Api,com.librarymanagement.entity,Book,4,69,0,0,2,29,1,20,1,20
+Api,com.librarymanagement.swaggertest,SwaggerConfig,0,40,0,0,0,9,0,4,0,4
+Api,com.librarymanagement.controller,BookController,0,79,0,0,0,16,0,12,0,12

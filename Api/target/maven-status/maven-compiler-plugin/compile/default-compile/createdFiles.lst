@@ -1,0 +1,8 @@
+com\librarymanagement\controller\BookController.class
+com\librarymanagement\exceptions\ResourceNotFoundException.class
+com\librarymanagement\repository\BookRepository.class
+com\librarymanagement\swaggertest\SwaggerConfig.class
+com\librarymanagement\RESTApplication.class
+com\librarymanagement\service\BookService.class
+com\librarymanagement\entity\Book.class
+com\librarymanagement\service\BookServiceImplement.class

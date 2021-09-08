@@ -1,0 +1,4 @@
+INSERT INTO BOOKS (NAME, PUBLISHER, AUTHOR, CATEGORY, DESCRIPTION, PRICE) VALUES ('sample name1','sample publisher1','sample author1', 'sample category1','Sample description1',2200)
+INSERT INTO BOOKS (NAME, PUBLISHER, AUTHOR, CATEGORY, DESCRIPTION, PRICE) VALUES ('sample name2','sample publisher2','sample author2', 'sample category2','Sample description2',220)
+INSERT INTO BOOKS (NAME, PUBLISHER, AUTHOR, CATEGORY, DESCRIPTION, PRICE) VALUES ('sample name3','sample publisher3','sample author1', 'sample category2','Sample description3',200)
+INSERT INTO BOOKS (NAME, PUBLISHER, AUTHOR, CATEGORY, DESCRIPTION, PRICE) VALUES ('sample name4','sample publisher1','sample author2', 'sample category1','Sample description4',2000)

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BookController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Api</a> &gt; <a href="index.source.html" class="el_package">com.librarymanagement.controller</a> &gt; <span class="el_source">BookController.java</span></div><h1>BookController.java</h1><pre class="source lang-java linenums">package com.librarymanagement.controller;
+
+import com.librarymanagement.entity.Book;
+import com.librarymanagement.exceptions.ResourceNotFoundException;
+import com.librarymanagement.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+<span class="fc" id="L14">public class BookController {</span>
+
+    @Autowired
+    private BookService bookService;
+
+    @GetMapping(&quot;/books&quot;)
+    public ResponseEntity&lt;List&lt;Book&gt;&gt; getAllBooks(){
+<span class="fc" id="L21">        return ResponseEntity.ok().body(bookService.getAllBooks());</span>
+    }
+
+    @GetMapping(&quot;/books/{id}&quot;)
+    public ResponseEntity&lt;Book&gt; getBookByIsbn(@PathVariable long id) throws ResourceNotFoundException {
+<span class="fc" id="L26">        return ResponseEntity.ok().body(bookService.getBookById(id));</span>
+    }
+
+    @GetMapping(&quot;/books/author&quot;)
+    public ResponseEntity&lt;List&lt;Book&gt;&gt; getBooksByAuthor(@RequestParam String author){
+<span class="fc" id="L31">        return ResponseEntity.ok().body(bookService.getBooksByAuthor(author));</span>
+    }
+
+    @GetMapping(&quot;/books/name&quot;)
+    public ResponseEntity&lt;List&lt;Book&gt;&gt; getBooksByName(@RequestParam String name){
+<span class="fc" id="L36">        return ResponseEntity.ok().body(bookService.getBooksByName(name));</span>
+    }
+
+    @GetMapping(&quot;/books/publisher&quot;)
+    public ResponseEntity&lt;List&lt;Book&gt;&gt; getBooksByPublisher(@RequestParam String publisher){
+<span class="fc" id="L41">        return ResponseEntity.ok().body(bookService.getBooksByPublisher(publisher));</span>
+    }
+
+    @GetMapping(&quot;/books/category&quot;)
+    public ResponseEntity&lt;List&lt;Book&gt;&gt; getBooksByCategory(@RequestParam String category){
+<span class="fc" id="L46">        return ResponseEntity.ok().body(bookService.getBooksByCategory(category));</span>
+    }
+
+    @PostMapping(&quot;/books&quot;)
+    public ResponseEntity&lt;Book&gt; addBook(@RequestBody Book book){
+<span class="fc" id="L51">        return ResponseEntity.ok().body(this.bookService.addBook(book));</span>
+    }
+    @PutMapping(&quot;/books/{id}&quot;)
+    public  ResponseEntity&lt;Book&gt; updateBook(@PathVariable long id, @RequestBody Book book){
+<span class="fc" id="L55">        book.setId(id);</span>
+<span class="fc" id="L56">        return ResponseEntity.ok().body(this.bookService.updateBook(book));</span>
+    }
+
+    @PatchMapping(&quot;/books/addcopies/{id}&quot;)
+    public  HttpStatus AddCopies(@PathVariable long id){
+
+<span class="fc" id="L62">        this.bookService.addCopies(id);</span>
+<span class="fc" id="L63">        return HttpStatus.OK;</span>
+    }
+
+    @PatchMapping(&quot;/books/removecopies/{id}&quot;)
+    public  HttpStatus RemoveCopies(@PathVariable long id){
+
+<span class="fc" id="L69">        this.bookService.removeCopies(id);</span>
+<span class="fc" id="L70">        return HttpStatus.OK;</span>
+    }
+
+    @DeleteMapping(&quot;/books/{id}&quot;)
+    public HttpStatus deleteBook(@PathVariable long id){
+<span class="fc" id="L75">        this.bookService.deleteBook(id);</span>
+<span class="fc" id="L76">        return HttpStatus.OK;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

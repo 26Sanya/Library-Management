@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: controllerTest
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 11.758 s <<< FAILURE! - in controllerTest
+validPutRequestGivesBook  Time elapsed: 0.026 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <200> but was: <405>
+	at controllerTest.validPutRequestGivesBook(controllerTest.java:119)
+
