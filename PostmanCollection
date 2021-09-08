@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "f60d5a67-ce8e-43a2-ac39-733dc0730d3d",
+		"name": "LibraryManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"isbn\" : 1234567890124,\r\n    \"name\" : \"sample name\",\r\n    \"publisher\" : \"publisher xyz\",\r\n    \"authors\" : \"author xyz\",\r\n    \"category\" : \"caegory xyz\",\r\n    \"description\" : \"Sample description\",\r\n    \"price\" : 2200\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Find Book by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/1234567890124",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"1234567890124"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/1234567890124",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"1234567890124"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Books By Author",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/author?author=sample author2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"author"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "sample author2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book By Name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/name?name=sample name1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"name"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "sample name1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Books by Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/category?category=sample category2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"category"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "sample category2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Books By Publisher",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/publisher?publisher=sample publisher1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"publisher"
+					],
+					"query": [
+						{
+							"key": "publisher",
+							"value": "sample publisher1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increase Copies of Books",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/addcopies/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"addcopies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrease Copies of Books",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/books/removecopies/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"removecopies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
